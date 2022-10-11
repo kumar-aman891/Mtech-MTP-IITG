@@ -1,0 +1,15 @@
+*ANN_Encoder_Decoder*
+1.It is a simple implementation of ANN.
+2.We read the input from our top_set(topology setting array) with CNN and then compress them to lower dimensions 
+  and then revert them back to orginal dimension.
+3.We compare the reverted image with the image we have from topology optimization and then backpropgate with our loss function as 
+  binary-cross entropy(just for now).
+4.Then we predict with our model for x_test which is the splitted inputs from top_set.
+
+*Variational_AutoEncoder*
+1.Problem is to that we are not able to utilize our topology setting.
+2.Try Modifying the loss function , we have to give input as our topology_setting , we compress it to lower dimension(latent space in
+  this case), we then sample parameters from latent space , expand them back to their original dimension as of input , compare the loss
+  between topology optimized image for that particular setting with the output we receive from the decoder , then propogate the error back 
+  and update.
+ 
